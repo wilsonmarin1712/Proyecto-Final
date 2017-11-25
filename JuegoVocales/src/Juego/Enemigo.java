@@ -23,7 +23,7 @@ public class Enemigo extends ObjetoJuegoMovimiento {
     private int enemytype, width, height;
 
     
-    // Constuctor for any enemy
+    // Constructor para cualquier enemigo
     public Enemigo(int xPosition, int yPosition, int xVelocity, int yVelocity, int enemyType, Color color, int width, int height) {
         super(xPosition, yPosition, xVelocity, yVelocity, color);
         this.enemytype = enemyType;
@@ -32,18 +32,18 @@ public class Enemigo extends ObjetoJuegoMovimiento {
     }
     
     @Override
-    // Draws alien
+    // Dibuja alien
     public void draw(Graphics g) {
-        // Varient 1
+        //Variante 1
         if (this.enemytype % 3 == 0) {
             alien1.paintIcon(null, g, this.getXPosition(), this.getYPosition());
-        // Varient 2
+        // Variante 2
         } else if (this.enemytype % 3 == 1 && this.enemytype != 100) {
             alien2.paintIcon(null, g, this.getXPosition(), this.getYPosition());
-        // Varient 3
+        // Variante 3
         } else if (this.enemytype % 3 == 2) {
             alien3.paintIcon(null, g, this.getXPosition(), this.getYPosition());
-        // Boss Enemy
+        // Jefe Enemigo
         } if (this.enemytype == 100)
         {
             if(PanelJuego.getBossHealth()>20){
@@ -58,14 +58,14 @@ public class Enemigo extends ObjetoJuegoMovimiento {
         }
     }
 
-    // Gets the hitbox for normal eneimes
+    // Obtiene el hitbox para enemigos normales
     @Override
     public Rectangle getBounds() {
         Rectangle enemyHitBox = new Rectangle(this.getXPosition(), this.getYPosition(), width, height);
         return enemyHitBox;
     }
 
-    // Used to move all enemies
+    // Usado para mover a todos los enemigos
     @Override
     public void move() {
         xPos += xVel;
