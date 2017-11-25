@@ -19,7 +19,7 @@ public class Beam extends ObjetoJuegoMovimiento {
         super(xPosition, yPosition, 0, 0, color);
     }
     
-// Used to draw a beam
+// usado para crear haz
     @Override
     public void draw(Graphics g) {
         g.setColor(color);
