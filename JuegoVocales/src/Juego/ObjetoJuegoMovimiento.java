@@ -12,7 +12,7 @@ public abstract class ObjetoJuegoMovimiento extends ObjetoJuego implements Movib
     int xVel;
     int yVel;
     
-    // Constructor for any non controllable object
+    // Constructor para cualquier objeto no controlable
     public ObjetoJuegoMovimiento(int xPosition, int yPosition, int xVelocity, int yVelocity, Color color)
     {
         super(xPosition, yPosition, color);
@@ -21,7 +21,7 @@ public abstract class ObjetoJuegoMovimiento extends ObjetoJuego implements Movib
     
     }
     
-    // Accessors and mutators for every part of the MovingGameObject constructor
+    // Accesores y mutadores para cada parte del constructor de objetos de juego en movimiento
     public int getXVelocity()
     {
         return xVel;
@@ -40,7 +40,7 @@ public abstract class ObjetoJuegoMovimiento extends ObjetoJuego implements Movib
     }
     @Override
     
-    // Used to move non controllable objects
+    // Se usa para mover objetos no controlables
     public void move()
     {
         this.xPos += xVel;
