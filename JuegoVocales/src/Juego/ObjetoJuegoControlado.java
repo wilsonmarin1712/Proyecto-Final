@@ -12,7 +12,7 @@ public abstract class ObjetoJuegoControlado extends ObjetoJuego implements Movib
     
     ControladorTeclado control;
     
-    // Constructor for any controllable object
+    // Constructor para cualquier objeto controlable
     public ObjetoJuegoControlado(int xPosition, int yPosition, Color color, ControladorTeclado control)
     {
         super(xPosition, yPosition, color);
