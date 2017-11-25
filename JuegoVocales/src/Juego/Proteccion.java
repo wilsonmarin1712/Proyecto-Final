@@ -15,7 +15,7 @@ public class Proteccion extends ObjetoJuego {
     int ancho;
     int altura;
 
-    // Constructor for Shield objects
+   // Constructor para objetos Shield
     public Proteccion(int xPosition, int yPosition, int width, int height, Color color) {
         super(xPosition, yPosition, color);
         this.ancho = width;
@@ -23,7 +23,7 @@ public class Proteccion extends ObjetoJuego {
 
     }
 
-    // Accessors and mutators for every part of the shield constructor
+    // Accesores y mutadores para cada parte del constructor de escudo
     public int getWidth() {
         return ancho;
     }
@@ -40,14 +40,14 @@ public class Proteccion extends ObjetoJuego {
         this.altura = height;
     }
 
-    // Used to draw shield objects
+    // Se usa para dibujar objetos de escudo
     @Override
     public void draw(Graphics g) {
         g.setColor(color);
         g.fillRect(this.getXPosition(), this.getYPosition(), 90, 10);
     }
 
-    // Used to get the hit box of a shield object
+    // Se usa para obtener el cuadro de golpe de un objeto de escudo
     @Override
     public Rectangle getBounds() {
         Rectangle shieldHitbox = new Rectangle(this.getXPosition(), this.getYPosition(), 90, 10);
