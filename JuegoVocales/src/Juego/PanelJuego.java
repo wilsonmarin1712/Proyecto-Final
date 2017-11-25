@@ -43,6 +43,7 @@ public class PanelJuego extends JPanel {
     private int puntaje = 0;
     private int nivel = 1;
     private int numeroDeVidas = 3;
+    private int numeroDeBalas = 0;
     private int highScore;
     private int markerX, markerY;
     private static int vidaJefe = 30;
@@ -118,7 +119,7 @@ public class PanelJuego extends JPanel {
         if (nivel != 3 && nivel != 6 && nivel != 9 && nivel != 12) {
             // Six rows
             for (int row = 0; row < 6; row++) {
-                // 5 columns
+                // 5 columnas
                 for (int column = 0; column < 5; column++) {
                     enemy = new Enemigo((20 + (row * 100)), (20 + (column * 60)), nivel, 0, column, null, 40, 40); // La velocidad del enemigo aumentará cada nivel
                     enemyList.add(enemy);
@@ -127,11 +128,11 @@ public class PanelJuego extends JPanel {
         }
        // Establece enemigos para niveles de jefe
         if (nivel == 3 || nivel == 6 || nivel == 9 || nivel == 12) {
-            AudioPlayer.player.start(bossSoundAudio); // Plays boss roar
+            AudioPlayer.player.start(bossSoundAudio); 
             enemy = new Enemigo(20, 20, 3, 0, 100, null, 150, 150);
             enemyList.add(enemy);
         }
-        // Gives directions on level 1
+        
         if (nivel == 1) {
             JOptionPane.showMessageDialog(null, "Bienvenido a Galaxy!\n\nManual:\n\n- Usar las teclas izquierda/derecha para moverse\n- Presione la barra espaciadora para disparar\n- Los Aliens son mas rapidos cada nivel"
                     + "\n- BOSS cada 3 niveles\n- Un enemigo extra aparecera al azar\n- disparales para puntos extra!\n- Presiona R para reiniciar el alto puntaje\n\nDIVIERTETE!");
@@ -271,6 +272,10 @@ public class PanelJuego extends JPanel {
         // Establece una alta puntuación
         g.setColor(Color.WHITE);
         g.drawString("PuntajeAlto: " + highScore, 440, 20);
+      
+      // Muestra numero de balas
+        g.setColor(Color.WHITE);
+        g.drawString("NumeroDeBalas: " + highScore, 520, 40);
 
         // Dibuja una visualización de salud para el nivel de jefe
         if (nivel == 3 || nivel == 6 || nivel == 9 || nivel == 12) {
